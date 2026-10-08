@@ -1,4 +1,4 @@
-﻿# Nhận xét RAGAS — V1 và V2
+# Nhận xét RAGAS — V1 và V2
 
 Đánh giá dùng 50 cặp hỏi–đáp cho mỗi phiên bản, cùng reference, cùng 3 đoạn context và hai prompt giống hệt nhiệm vụ 2. Mỗi metric có đủ 50 điểm hữu hạn; một lượt context_precision của V2 bị timeout đã được chấm lại bằng mẫu gốc lấy từ LangSmith.
 
@@ -16,3 +16,9 @@ Ví dụ, với câu hỏi về LangSmith datasets, faithfulness của V1 là 1.
 Context recall và context precision bằng nhau ở 4 chữ số thập phân vì hai phiên bản dùng đúng cùng các đoạn truy xuất. Chênh lệch context precision ở các chữ số rất nhỏ chỉ ở mức số học, không thể coi là ưu thế của prompt. Kết quả này nghiêng về chọn V1 cho bộ câu hỏi hiện tại; nếu cải tiến V2, nên yêu cầu phần cơ chế và ý nghĩa chỉ xuất hiện khi context có bằng chứng rõ ràng, rồi đánh giá lại cả hai phiên bản với prompt đã version mới.
 
 Nguồn: data/ragas_report.json, data/ragas_v1_details.json, data/ragas_v2_details.json và evidence/03_ragas_evaluation_log.txt. Ảnh evidence/03_ragas_scores.png là ảnh Playwright chụp bảng HTML từ JSON thật; không phải ảnh terminal.
+
+## Public LangSmith traces
+
+All 360 root traces present in day22-lab when sharing started have been shared publicly, including 103 rag-query and 50 ab-rag-query traces. Child runs are available within each shared trace.
+
+See [the complete public trace index](langsmith_public_traces.md) or [the JSON manifest](langsmith_public_traces.json). An anonymous Playwright browser verified that a shared rag-query trace is accessible without logging in. New traces created later require their own sharing links.
